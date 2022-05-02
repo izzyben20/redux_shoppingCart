@@ -1,19 +1,19 @@
 import React from "react";
-// components
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
 import Navbar from "./components/Navbar";
 import CartContainer from "./components/CartContainer";
-// items
-import cartItems from "./cart-items";
-// redux stuff
 
-function App() {
+const App = () => {
   // cart setup
 
   return (
-    <main>
-      <Navbar />
-      <CartContainer cart={cartItems} />
-    </main>
+    <Provider store={store}>
+      <main>
+        <Navbar />
+        <CartContainer />
+      </main>
+    </Provider>
   );
 }
 
